@@ -1,14 +1,12 @@
 from turtle import Turtle
 
-MOVE_UP_DISTANCE = 20
-MOVE_DOWN_DISTANCE = 20
 
 class Paddle(Turtle):
     def __init__(self, position):
         super().__init__()
         self.create_paddle(position)
-        self.y_move_up = 20
-        self.y_move_down = -20
+        self.y_move_up = 40
+        self.y_move_down = -40
     def create_paddle(self, position):
         self.shape("square")
         self.color("white")
@@ -26,9 +24,9 @@ class Paddle(Turtle):
     def go_up(self):
         new_y = self.ycor() + self.y_move_up
         self.goto(self.xcor(), new_y)
-        self.y_move_down = -20
+        self.y_move_down = -40
     def go_down(self):
         new_y = self.ycor() + self.y_move_down
         self.goto(self.xcor(), new_y)
-        self.y_move_up = 20
+        self.y_move_up = 40
 
